@@ -30,7 +30,7 @@ const HomePage = () => {
   const API_BASE_URL =
     import.meta.env.MODE === "development"
       ? "http://localhost:5001/api"
-      : "https://inclusight-production.up.railway.app/api";
+      : import.meta.env.VITE_BACKEND_URL || "https://backend-inclusight-production.up.railway.app";
 
   const handleAnalyze = async (url) => {
     if (!url) {
